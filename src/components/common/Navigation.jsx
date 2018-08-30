@@ -6,7 +6,7 @@ import observer from "../../api/observer";
 export default class Navigation extends Component {
     constructor(props) {
         super(props);
-        this.state = {username: null, query: '2'};
+        this.state = {username: null, query: ''};
         this.handleChange = this.handleChange.bind(this);
 
         observer.subscribe(observer.events.loginUser, this.userLoggedIn);

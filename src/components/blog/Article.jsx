@@ -29,9 +29,7 @@ export default class Post extends Component {
         const isAuthorized = this.props.author === sessionStorage.getItem('username');
         const isAdmin = sessionStorage.getItem('userRole') === 'admin';
         const adminSection =
-            <div>
-                <Link to='#' onClick={this.deleteAuthor} class="btn btn-danger btn-sm">Ban User</Link>
-            </div>;
+           '';
         const authorizedSection =
             <div class="article-button">
                 <Link to={'/Article/Edit/' + this.props._id} class="btn btn-warning btn-sm">Edit</Link>

@@ -15,6 +15,10 @@ export default {
             return "Title is required";
         }
         if (!content) {
+            return "Description is required.";
+        }
+        
+        if (!content) {
             return "Content is required.";
         }
     }

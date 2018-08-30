@@ -34,7 +34,7 @@ class ArticleCreate extends Component {
                            name="imageUrl"
                            onChange={this.props.handleChange}
                            type="text"
-                           value={this.props.imageUrl}/>
+                           value={this.props.imageUrl} required/>
                     </div>
                     <hr></hr>
                     <div class="form-group">

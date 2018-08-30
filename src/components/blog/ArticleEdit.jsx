@@ -118,7 +118,7 @@ class ArticleEdit extends Component {
                                onChange={this.handleChange}
                                type="text"
                                value={this.props.imageUrl}
-                               placeholder={this.state.imageUrl}/>
+                               placeholder={this.state.imageUrl} required/>
                     </div>
                     <hr></hr>
                     <div class="form-group">
