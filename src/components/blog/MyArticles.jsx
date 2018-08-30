@@ -31,10 +31,16 @@ export default class AllArticles extends Component {
     render = () => {
         if (sessionStorage.getItem('username')) {
             return (
-                <section id="viewBlog">
-                    {this.state.articles.map((article, i) => <Article key={article._id}
-                                                                      index={i} {...article} {...this.props}/>)}
-                </section>
+                <div class="content">
+                <div class="row justify-content-center">           
+                     <div class="col-md-6">
+                         <h1 class="my-4">My Articles                       
+                         </h1>
+                         {this.state.articles.map((article, i) => <Article key={article._id}
+                                                                       index={i} {...article} {...this.props}/>)}
+                     </div>
+                 </div>
+             </div>
             )
         } else {
             return (

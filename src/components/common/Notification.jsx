@@ -25,20 +25,23 @@ export default class Notification extends Component {
     hideNotification = ev => this.setState(DEFAULT_STATE);
 
     render = () => {
-        let notificationId;
+        let notificationClass;
         if (this.state.success) {
-            notificationId = 'infoBox';
+            notificationClass = 'alert alert-success alert-dismissible fade show';
         } else if (this.state.error) {
-            notificationId = 'errorBox';
+            notificationClass = 'alert alert-danger alert-dismissible fade show';
         } else if (this.state.loading) {
-            notificationId = 'loadingBox';
+            notificationClass = 'alert alert-warning alert-dismissible fade show';
         }
 
         if (this.state.message) {
-            return (
-                <div id={notificationId} className="notification" onClick={this.hideNotification}>
-                    <span>{this.state.message}</span>
-                </div>)
+            return (<div class="alert alert-dismissible fade show" class={notificationClass} role="alert">
+            {this.state.message}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+                )
         } else {
             return null;
         }

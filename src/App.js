@@ -14,6 +14,7 @@ import ArticleEdit from './components/blog/ArticleEdit';
 import ArticleForm from './components/blog/ArticleForm';
 import 'bootstrap/dist/css/bootstrap.css';
 import ByCategory from './components/blog/ByCategory';
+import ArticleSearch from './components/blog/ArticleSearch';
 
 class App extends Component {
     constructor(props) {
@@ -36,6 +37,8 @@ class App extends Component {
                     <Route path='/Article/Details/:id' component={ArticleDetails}/>
                     <Route path='/Article/Edit/:id' component={ArticleEdit}/>
                     <Route path='/Category/:category' component={ByCategory}/>
+                    <Route path='/Search/:query' component={ArticleSearch}/>
+
                 </Switch>
             </div>
         );
