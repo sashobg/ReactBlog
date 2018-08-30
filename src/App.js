@@ -13,6 +13,7 @@ import ArticleDetails from './components/blog/ArticleDetails';
 import ArticleEdit from './components/blog/ArticleEdit';
 import ArticleForm from './components/blog/ArticleForm';
 import 'bootstrap/dist/css/bootstrap.css';
+import ByCategory from './components/blog/ByCategory';
 
 class App extends Component {
     constructor(props) {
@@ -21,9 +22,9 @@ class App extends Component {
     }
     render() {
         return (
-            <div className="App">
-                <Header {...this.props}/>
+            <div className="App">               
                 <Navigation/>
+                <Header {...this.props}/>
                 <Notification/>
                 <Switch>
                     <Route path='/' exact component={LoginForm}/>
@@ -34,6 +35,7 @@ class App extends Component {
                     <Route path='/Article/Create' component={ArticleForm}/>
                     <Route path='/Article/Details/:id' component={ArticleDetails}/>
                     <Route path='/Article/Edit/:id' component={ArticleEdit}/>
+                    <Route path='/Category/:category' component={ByCategory}/>
                 </Switch>
             </div>
         );

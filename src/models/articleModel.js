@@ -5,7 +5,7 @@ export default {
         description: '',
         imageUrl: '',
         content: '',
-        Category: '',
+        category: '',
         id: ''
     },
     validate: data => {

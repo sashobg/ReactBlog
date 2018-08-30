@@ -79,7 +79,7 @@ class ArticleEdit extends Component {
                     content: res.content,
                     imageUrl: res.imageUrl,
                     description: res.description,
-                    Category: res.Category,
+                    category: res.category,
                     id: articleId
                 });
                 console.log(res);
@@ -89,56 +89,72 @@ class ArticleEdit extends Component {
 
     render = () => {
         const isAdmin = sessionStorage.getItem('userRole') === 'admin';
-        const authorizedSection = <div className="border-danger">
-            <Link to='#' onClick={this.deleteArticle} className="btn-danger">Delete Article</Link>
-        </div>;
+        const authorizedSection = <div>
+            <br/>
+            <Link to='#' onClick={this.deleteArticle} class="btn btn-danger btn-sm">Delete Article</Link>        
+            </div>
         return (
-            <div className="form-group">
+            <div class="content">
+            <div class="row justify-content-center">
+            <div class="col-6 text-center">
+            <div class="form-group">
                 <form id="articleCreateForm" onSubmit={this.handleSubmit}>
                     <h2>Edit Article</h2>
                     {this.props.error}
-                    <div className="form-group">
+                    <div class="form-group">
                         <label>Title:</label>
-                        <input className="form-control"
+                        <input class="form-control"
                                name="title"
                                onChange={this.handleChange}
                                type="text"
                                value={this.props.title}
                                placeholder={this.state.title}/>
                     </div>
-                    <div className="form-group">
+                    <hr></hr>
+                    <div class="form-group">
                         <label>Image URL:</label>
-                        <input className="form-control"
+                        <input class="form-control"
                                name="imageUrl"
                                onChange={this.handleChange}
                                type="text"
                                value={this.props.imageUrl}
                                placeholder={this.state.imageUrl}/>
                     </div>
-                    <div className="form-group">
+                    <hr></hr>
+                    <div class="form-group">
                         <label>Description:</label>
-                        <input className="form-control"
+                        <input class="form-control"
                                name="description"
                                onChange={this.handleChange}
                                type="text"
                                value={this.props.description}
                                placeholder={this.state.description}/>
                     </div>
-                    <div className="form-group col-md-4">
+                    <hr></hr>
+                    
+                    <div class="form-group">
                         <label>Category</label>
-                        <select name="Category"
-                                className="form-control"
+                        <select name="category"
+                                class="form-control"
                                 onChange={this.handleChange}
                                 type="text"
-                                value={this.props.Category}>
-                            <option>...</option>
-                            <option>Audi</option>
-                            <option>BMW</option>
+                                value={this.state.category}>                            
+                            <option value="Audi">Audi</option>
+                            <option value="VW">VW</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Mercedes">Mercedes</option>
+                            <option value="Skoda">Skoda</option>
+                            <option value="Seat">Seat</option>
+                            <option value="Opel">Opel</option>
+                            <option value="Kia">Kia</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Honda">Honda</option>    
                         </select>
                     </div>
-                    <div className="form-group">
+                    <hr></hr>
+                    <div class="form-group">
                         <label>Content:</label>
-                        <textarea className="form-control"
+                        <textarea class="form-control"
                                   name="content"
                                   onChange={this.handleChange}
                                   type="text"
@@ -149,6 +165,7 @@ class ArticleEdit extends Component {
                     {isAdmin ? authorizedSection : null}
                 </form>
             </div>
+            </div></div></div>
         )
     }
 }

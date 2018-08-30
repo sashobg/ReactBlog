@@ -7,16 +7,16 @@ import userService from '../../services/userService'
 class SignIn extends Component {
     render = () => {
         return (
-            <div className="form-group">
-            <form id="loginForm" onSubmit={this.props.handleSubmit}>
-                <h2>Sign In</h2>
-                {this.props.error}
-                <label>Username:</label>
-                <input name="username" onChange={this.props.handleChange} type="text" value={this.props.username} />
-                <label>Password:</label>
-                <input name="password" onChange={this.props.handleChange} type="password" value={this.props.password} />
-                <input id="btnLogin" type="submit" value="Sign In" />
-            </form>
+            <div>    
+
+             <form class="form-signin" id="loginForm" onSubmit={this.props.handleSubmit}>
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <input  name="username" onChange={this.props.handleChange} type="text" value={this.props.username} class="form-control" placeholder="Username" required />
+
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" name="password" onChange={this.props.handleChange} value={this.props.password} class="form-control" placeholder="Password" required />
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>                
+                </form>
             </div>
         )
     }

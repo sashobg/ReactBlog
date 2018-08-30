@@ -12,57 +12,74 @@ class ArticleCreate extends Component {
 
     render = () => {
         return (
-            <div className="form-group">
+            <div class="content">
+            <div class="row justify-content-center">
+            <div class="col-6 text-center">
+            <div class="form-group">
                 <form id="articleCreateForm" onSubmit={this.props.handleSubmit}>
                     <h2>Create Article</h2>
                     {this.props.error}
-                    <div className="form-group">
+                    <div class="form-group">
                     <label>Title:</label>
-                    <input className="form-control"
+                    <input class="form-control"
                            name="title"
                            onChange={this.props.handleChange}
                            type="text"
                            value={this.props.title}/>
                     </div>
-                    <div className="form-group">
+                    <hr></hr>
+                    <div class="form-group">
                     <label>Image URL:</label>
-                    <input className="form-control"
+                    <input class="form-control"
                            name="imageUrl"
                            onChange={this.props.handleChange}
                            type="text"
                            value={this.props.imageUrl}/>
                     </div>
-                    <div className="form-group">
+                    <hr></hr>
+                    <div class="form-group">
                     <label>Description:</label>
-                    <input className="form-control"
+                    <input class="form-control"
                            name="description"
                            onChange={this.props.handleChange}
                            type="text"
                            value={this.props.description}/>
                     </div>
-                    <div className="form-group col-md-4">
+                    <hr></hr>
+                    <div class="form-group">
                         <label>Category</label>
-                        <select name="Category"
-                                className="form-control"
+                        <select name="category"
+                                class="form-control"
                         onChange={this.props.handleChange}
                         type="text"
-                        value={this.props.Category}>
-                             <option>...</option>
+                        value={this.props.category}>                            
                             <option>Audi</option>
+                            <option>VW</option>
                             <option>BMW</option>
+                            <option>Mercedes</option>
+                            <option>Skoda</option>
+                            <option>Seat</option>
+                            <option>Opel</option>
+                            <option>Kia</option>
+                            <option>Toyota</option>
+                            <option>Honda</option>                        
                         </select>
                     </div>
-                    <div className="form-group">
+                    <hr></hr>
+                    <div class="form-group">
                     <label>Content:</label>
-                    <textarea className="form-control"
+                    <textarea class="form-control"
                               name="content"
                               onChange={this.props.handleChange}
                               type="text"
                               value={this.props.content}/>
                     </div>
-                    <input class="btn btn-sm" type="submit" value="Submit Article Post"/>
+                    <input class="btn btn-sm btn-success" type="submit" value="Submit Article Post"/>
                 </form>
             </div>
+       </div>
+       </div>
+        </div>
         )
     }
 }

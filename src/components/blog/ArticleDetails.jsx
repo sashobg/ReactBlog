@@ -24,7 +24,7 @@ export default class ArticleDetailsContainer extends Component {
             _id: '',
             title: '',
             content: '',
-            Category: '',
+            category: '',
             desctription: '',
             imageUrl: '',
             url: '',
@@ -64,45 +64,32 @@ export default class ArticleDetailsContainer extends Component {
     };
     render = () => {
         const isAdmin = sessionStorage.getItem('userRole') === 'admin';
-        const authorizedSection = <div className="border-danger">
+        const authorizedSection = <div class="article-button">        
             <Link to='#' onClick={this.deleteAuthor} class="btn btn-sm btn-danger">Delete User</Link>
             <div>
+                <br/>
                 <Link to={'/Article/Edit/' + this.state._id} class="btn btn-sm btn-warning">Edit</Link>
             </div>
         </div>;
         return (
             <div class="container">
-      <div class="row">      
-        <div class="col-lg-8">          
-          <h1 class="mt-4">{this.state.title}</h1>         
-          <p class="lead">
-            by 
-            <a>{this.state.author}</a>
-          </p>
-
-         
-
-        
-          <p>Posted {articleService.createdBeforeDays(this.state.createdOn)}</p>
-
-         
-         <p>Category: {this.state.Category}</p>
-          
-          <img class="img-fluid rounded" src={this.state.imageUrl} alt=""></img>
-
-         
-
-         
-          <p class="lead">{this.state.content}</p>
-
-
-
-         
-
-
-          {isAdmin ? authorizedSection : null}
-            </div>
-           </div></div>
+              <div class="row justify-content-center">      
+                 <div class="col-lg-8">
+                    <h1 class="mt-4">{this.state.title}</h1>
+                    <p class="lead"> by <a href="#">{this.state.author}</a></p>
+                    <hr></hr>
+                    <p>Posted {articleService.createdBeforeDays(this.state.createdOn)} ago</p>
+                    <hr></hr>
+                    <img class="img-fluid rounded" src={this.state.imageUrl} alt=""/>
+                    <hr></hr>
+                    <p class="lead">Category: <Link to={'/Category/' + this.state.category}>{this.state.category}</Link></p>
+                    <hr></hr>
+                    <p>{this.state.content}</p>
+                    <hr></hr>
+                        {isAdmin ? authorizedSection : null}
+                        </div>
+                    </div>
+                </div>
            
         )
     }
